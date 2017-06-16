@@ -2,7 +2,13 @@ var app = angular.module('myApp', []);
 
 app.controller('SocksController', SocksController);
 
-function SocksController(){
-console.log('NG YO');
+function SocksController(SockService) {
+  console.log('NG YO');
+  var vm = this;
+  SockService.checkSocks();
+
+  vm.getSocks = function() {
+    console.log('get socks');
+  };
 
 }
